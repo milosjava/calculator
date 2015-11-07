@@ -80,7 +80,7 @@ After running calculator will show up in the center of the screen as shown on th
 
 Here's the list of the available buttons: 
 
-*    ![0](images/zero.png) &nbsp;&nbsp;&nbsp;  to &nbsp;&nbsp;&nbsp; ![9](images/nine.png)  are numbers 
+*    ![0](images/zero.png?raw=true "zero")) &nbsp;&nbsp;&nbsp;  to &nbsp;&nbsp;&nbsp; ![9](images/nine.png)  are numbers 
 *    ![linear](images/linear.png) &nbsp;&nbsp;&nbsp; are used for linear equation
 *    ![clear](images/clear.png) &nbsp;&nbsp;&nbsp;  clear, delete all
 *    ![binary](images/binaryOperations.png) &nbsp;&nbsp;&nbsp;  operations
