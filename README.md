@@ -6,7 +6,7 @@
 This project is part4 of the [interview](http://www.toptal.com/top-3-percent) for joining [Toptal](www.toptal.com).
 
 
-##Specification
+## Specification
 
 Text of the task is given in the file **task.txt**
 
