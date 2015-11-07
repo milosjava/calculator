@@ -1,11 +1,13 @@
 package calculator
 
+import com.typesafe.scalalogging.LazyLogging
+
 import scala.util.matching.Regex
 
 /**
   * Created by Milos Grubjesic (milosjava@gmail.com) on 11/5/15.
   */
-object TokenParser {
+object TokenParser extends LazyLogging  {
 
   //todo add ScalaDoc
 
@@ -14,8 +16,6 @@ object TokenParser {
     var replacedStr = str.replaceAll("log","L")
 
     replacedStr = replacedStr.replaceAll("\\(-","\\(0-")
-
-    //println(replacedStr)
 
     //decided to go with regex pattern matching
     val reg = new Regex("[+()*\\/-]|L|x|=|[0-9]*\\.?[0-9]+")

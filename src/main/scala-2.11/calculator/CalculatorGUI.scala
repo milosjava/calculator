@@ -98,7 +98,6 @@ object CalculatorGUI extends JFXApp {
       multiply.prefWidth = buttonWidth
 
 
-
       button4.prefWidth = buttonWidth
       button5.prefWidth = buttonWidth
       button6.prefWidth = buttonWidth
@@ -214,7 +213,7 @@ object CalculatorGUI extends JFXApp {
 
       calculate.onAction  = (e: ActionEvent) => {
 
-        var calculatedValue = LanguageParser.parser(text.text.value)
+        var calculatedValue = Calculator.calculate(text.text.value)
         text.text = calculatedValue
       }
 

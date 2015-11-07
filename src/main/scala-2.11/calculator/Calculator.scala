@@ -2,13 +2,15 @@ package calculator
 
 import com.typesafe.scalalogging._
 
+import scala.util.Try
+
 /**
   * Created by Milos Grubjesic (milosjava@gmail.com) on 11/3/15.
   */
-object LanguageParser extends LazyLogging  {
+object Calculator extends LazyLogging  {
 
 
-  def parser(input : String) :String = {
+  def calculate(input : String) :String = {
 
 
     var tokens = TokenParser.getTokens(input)
@@ -23,28 +25,26 @@ object LanguageParser extends LazyLogging  {
 
     val res =  rpn(postfix)
 
-    //if result is infinite , there was division by zero
-    if(res.isInfinite){
-
-      logger.debug(input+" -> error")
-      return("error")
+    if(res == "Malformed" | res == "error"){
+      return (res)
     }
 
+    var numericRes = res.toDouble
 
-    if(res == res.floor){
-      logger.debug(input+" -> "+res.toInt.toString)
-      return res.toInt.toString
+    if(numericRes == numericRes.floor){
+      logger.debug(input+" -> "+numericRes.toInt.toString)
+      return numericRes.toInt.toString
     }
 
-    logger.debug(input+" -> "+res.toString)
-    return res.toString
+    logger.debug(input+" -> "+numericRes.toString)
+    return numericRes.toString
 
 
   }
 
 
 
-  def rpn(str: String) :Double= {
+  def rpn(str: String) :String= {
 
     //binary operation
     val ops2 = Map(
@@ -62,8 +62,7 @@ object LanguageParser extends LazyLogging  {
     val stack = new scala.collection.mutable.Stack[Double]
 
 
-    //todo error handling
-    str.split(' ').foreach(token =>
+    var err = Try(str.split(' ').foreach(token =>
       stack.push(
         if (ops2.contains(token)) {
           ops2(token)(stack.pop, stack.pop)
@@ -75,12 +74,26 @@ object LanguageParser extends LazyLogging  {
 
         }
 
-      ))
+      )))
 
-    stack.pop
+    if(err.isSuccess!=true){
+      logger.debug(str+" -> Malformed")
+      return "Malformed"
+    }
+
+    var res = stack.pop
+
+    if(res.isInfinite){
+      logger.debug(str+" -> error")
+      return "error"
+    }
+
+    //number to string
+    res.toString
 
   }
 
+  //parse double - creates double from token string
   def parse = java.lang.Double.parseDouble _
 
 

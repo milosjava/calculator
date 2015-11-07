@@ -1,9 +1,11 @@
 package calculator
 
+import com.typesafe.scalalogging.LazyLogging
+
 /**
   * Created by Milos Grubjesic (milosjava@gmail.com) on 11/7/15.
   */
-object ShuntingYard {
+object ShuntingYard extends LazyLogging  {
 
 
   def infixToPostfix(infix: Array[String]): String = {
