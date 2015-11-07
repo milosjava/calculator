@@ -1,3 +1,6 @@
+---
+output: pdf_document
+---
 # TOPTAL Calculator
 
 
@@ -73,14 +76,14 @@ browsing projects documentation
 After running calculator will show up in the center of the screen as shown on the next image:
 
 
-![Image of Calculator](https://github.com/milosjava/codilityScala/blob/master/images/calculator.png)
+![Image of Calculator](images/calculator.png)
 
 
 ### Buttons
 
 Here's the list of the available buttons: 
 
-*    ![0](images/zero.png?raw=true "zero")) &nbsp;&nbsp;&nbsp;  to &nbsp;&nbsp;&nbsp; ![9](images/nine.png)  are numbers 
+*    ![0](images/zero.png) &nbsp;&nbsp;&nbsp;  to &nbsp;&nbsp;&nbsp; ![9](images/nine.png)  are numbers 
 *    ![linear](images/linear.png) &nbsp;&nbsp;&nbsp; are used for linear equation
 *    ![clear](images/clear.png) &nbsp;&nbsp;&nbsp;  clear, delete all
 *    ![binary](images/binaryOperations.png) &nbsp;&nbsp;&nbsp;  operations
@@ -88,6 +91,10 @@ Here's the list of the available buttons:
 *    ![brackets](images/brackets.png)&nbsp;&nbsp;&nbsp;  brackets
 *    ![point](images/point.png)&nbsp;&nbsp;&nbsp;  point for floating point numbers
 *    ![calculate](images/calculate.png)&nbsp;&nbsp;&nbsp;  calculate!
+
+
+
+
 
 
 
