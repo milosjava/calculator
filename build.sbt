@@ -3,7 +3,7 @@
 name := "CalculatorScala"
 
 // Project version
-version := "0.0.1"
+version := "0.5"
 
 // Version of Scala used by the project
 scalaVersion := "2.11.7"
@@ -18,8 +18,6 @@ libraryDependencies ++= Seq(
 
 libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0"
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.2"
-
-//mainClass in Compile := Some("calculator.CalculatorGUI")
 
 
 // Fork a new JVM for 'run' and 'test:run', to avoid JavaFX double initialization problems

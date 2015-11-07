@@ -10,6 +10,8 @@ import scala.util.Try
 object Calculator extends LazyLogging  {
 
 
+
+
   def calculate(input : String) :String = {
 
 
@@ -24,6 +26,7 @@ object Calculator extends LazyLogging  {
 
 
     val res =  rpn(postfix)
+
 
     if(res == "Malformed" | res == "error"){
       return (res)
@@ -86,6 +89,12 @@ object Calculator extends LazyLogging  {
     if(res.isInfinite){
       logger.debug(str+" -> error")
       return "error"
+    }
+
+    //this can happen in malformed request like 78log6
+    if(stack.isEmpty != true){
+      logger.debug(str+" -> Malformed")
+      return "Malformed"
     }
 
     //number to string
