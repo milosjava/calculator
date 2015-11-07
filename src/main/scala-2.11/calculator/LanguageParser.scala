@@ -1,17 +1,15 @@
 package calculator
 
+import com.typesafe.scalalogging._
+
 /**
   * Created by Milos Grubjesic (milosjava@gmail.com) on 11/3/15.
   */
-object LanguageParser {
+object LanguageParser extends LazyLogging  {
 
-
-  //todo check border cases  e.g. divided by zero etc...
-  //Division by zero is undefined
 
   def parser(input : String) :String = {
 
-    //todo change logs
 
     var tokens = TokenParser.getTokens(input)
 
@@ -20,31 +18,25 @@ object LanguageParser {
       return LinearEquation.solver(input)
     }
 
-//    println("tok:")
-//    tokens.foreach(println)
-
     var postfix = ShuntingYard.infixToPostfix(tokens)
 
-//    println("post:")
-    //println(postfix)
-
-    //println("assert(\""+postfix+"\"== toPostfix(\""+input+"\"))")
-
-
-    //return postfix
 
     val res =  rpn(postfix)
 
     //if result is infinite , there was division by zero
     if(res.isInfinite){
+
+      logger.debug(input+" -> error")
       return("error")
     }
 
 
     if(res == res.floor){
+      logger.debug(input+" -> "+res.toInt.toString)
       return res.toInt.toString
     }
 
+    logger.debug(input+" -> "+res.toString)
     return res.toString
 
 

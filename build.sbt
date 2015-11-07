@@ -14,8 +14,10 @@ scalaVersion := "2.11.7"
 libraryDependencies ++= Seq(
   "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test",
   "org.scalafx" %% "scalafx" % "8.0.60-R9"
-
 )
+
+libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0"
+libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.2"
 
 //mainClass in Compile := Some("calculator.CalculatorGUI")
 
