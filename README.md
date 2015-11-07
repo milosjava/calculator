@@ -73,7 +73,7 @@ browsing projects documentation
 After running calculator will show up in the center of the screen as shown on the next image:
 
 
-![Image of Calculator](images/calculator.png)
+![Image of Calculator](https://github.com/milosjava/codilityScala/blob/master/images/calculator.png)
 
 
 ### Buttons
