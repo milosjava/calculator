@@ -9,28 +9,32 @@ import scala.util.matching.Regex
   */
 object TokenParser extends LazyLogging  {
 
-  //todo add ScalaDoc
 
+  /**
+    * Transforms free calculation entry string to tokens through regex
+    * @param str
+    * @return
+    */
   def getTokens(str: String): Array[String] = {
 
+    //replace internaly log with L for easier handling
     var replacedStr = str.replaceAll("log","L")
 
+    //make sure - is binary operation by adding 0 if necessary
     replacedStr = replacedStr.replaceAll("\\(-","\\(0-")
 
-    //decided to go with regex pattern matching
+    //regex pattern matching for + - * / L Integer and Double
     val reg = new Regex("[+()*\\/-]|L|x|=|[0-9]*\\.?[0-9]+")
 
     var resp = reg.findAllIn(replacedStr).toArray
 
 
-    //if strat with -  add 0 so it looks like -5+2   -> 0-5+2
+    //if starts with -  add 0 so it looks like -5+2   -> 0-5+2
     if(resp(0)=="-"){
-
       resp = "0"+:resp
     }
 
-
-
+    //return tokens
     return resp
 
   }

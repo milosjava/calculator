@@ -16,8 +16,10 @@ import scalafx.scene.paint.Color
 import scalafx.scene.shape.Rectangle
 import scalafx.scene.text.Font
 
-//todo add read.me content
 
+/**
+  * Main ScalaFX class. Implements calculator GUI
+  */
 object CalculatorGUI extends JFXApp {
 
   stage = new JFXApp.PrimaryStage {
@@ -42,6 +44,7 @@ object CalculatorGUI extends JFXApp {
 
       val text = new TextField
 
+      //set the sizes
       text.prefHeight = 60
       text.prefWidth = 290
 
@@ -49,7 +52,7 @@ object CalculatorGUI extends JFXApp {
       text.layoutY = 5
 
 
-      //set inout font  and size
+      //set input font  and size
       text.setFont(Font.font("Serif", 22))
 
       //now add pane

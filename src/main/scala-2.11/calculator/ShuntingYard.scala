@@ -8,6 +8,11 @@ import com.typesafe.scalalogging.LazyLogging
 object ShuntingYard extends LazyLogging  {
 
 
+  /**
+    * Transforms inflix notation to postfix notation
+    * @param infix array of tokens
+    * @return postfix notation
+    */
   def infixToPostfix(infix: Array[String]): String = {
 
     val ops: String = "-+/*L"
