@@ -10,28 +10,34 @@ import scala.util.Try
 object Calculator extends LazyLogging  {
 
 
-
-
+  /**
+    * Recieves input parameters and gets result from either calculator
+    * or linear equation solver
+    * @param input input string e.g. 6+5 , 2*x+4= 0 etc..
+    * @return string value
+    */
   def calculate(input : String) :String = {
 
-
+    //transfrom input to array of tokens
     var tokens = TokenParser.getTokens(input)
 
-
+    //in case its linear equation pass handling to appropriate method
     if(tokens.contains("x") && tokens.contains("=")) {
       return LinearEquation.solver(input)
     }
 
+    //transform to postfix notation
     var postfix = ShuntingYard.infixToPostfix(tokens)
 
-
+    //get the result
     val res =  rpn(postfix)
 
-
+    //if error print error message
     if(res == "Malformed" | res == "error"){
       return (res)
     }
 
+    //transform return value to be easy to read  e.g.  1.0  will be just 1
     var numericRes = res.toDouble
 
     if(numericRes == numericRes.floor){
@@ -46,7 +52,11 @@ object Calculator extends LazyLogging  {
   }
 
 
-
+  /**
+    * Calculates the value of postfix notation
+    * @param str input postfix expression
+    * @return calculated string value
+    */
   def rpn(str: String) :String= {
 
     //binary operation
@@ -65,7 +75,7 @@ object Calculator extends LazyLogging  {
     val stack = new scala.collection.mutable.Stack[Double]
 
 
-    var err = Try(str.split(' ').foreach(token =>
+    val err = Try(str.split(' ').foreach(token =>
       stack.push(
         if (ops2.contains(token)) {
           ops2(token)(stack.pop, stack.pop)

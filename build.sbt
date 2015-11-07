@@ -19,6 +19,8 @@ libraryDependencies ++= Seq(
 libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0"
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.2"
 
+target in Compile in doc := baseDirectory.value / "scalaDoc"
+
 
 // Fork a new JVM for 'run' and 'test:run', to avoid JavaFX double initialization problems
 fork := true
