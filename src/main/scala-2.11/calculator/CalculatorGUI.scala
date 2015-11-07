@@ -16,6 +16,8 @@ import scalafx.scene.paint.Color
 import scalafx.scene.shape.Rectangle
 import scalafx.scene.text.Font
 
+//todo add read.me content
+
 object CalculatorGUI extends JFXApp {
 
   stage = new JFXApp.PrimaryStage {
@@ -69,7 +71,7 @@ object CalculatorGUI extends JFXApp {
       val button8 = new Button("8")
       val button9 = new Button("9")
 
-      //define buttons - operations
+      //define buttons - operations, tooltips
 
       val divide  = new Button{text = "/";tooltip = "Divide"}
       val plus  = new Button{text = "+";tooltip = "Add"}
@@ -78,7 +80,7 @@ object CalculatorGUI extends JFXApp {
       val startGroup  = new Button{text = "(";tooltip = "Start Group"}
       val endGroup  = new Button{text = ")";tooltip = "End Group"}
       val equals  = new Button{text = "=";tooltip = "Equals for Linear Equation"}
-      val X  = new Button{text = "X";tooltip = "Variable for Linear Equation"}
+      val X  = new Button{text = "x";tooltip = "Variable for Linear Equation"}
       val multiply = new Button{text = "*";tooltip = "Multiply"}
       val clearDisplay = new Button{text = "C"; tooltip = "Clear Screen"}
       val log = new Button{text = "log";tooltip = "Logarithm"}
@@ -128,7 +130,7 @@ object CalculatorGUI extends JFXApp {
 
       button0.onAction  = (e: ActionEvent) => {
         text.text = text.text.value + "0"
-        text.positionCaret(text.getCaretPosition()+1)
+        //text.positionCaret(text.getCaretPosition()+1)
       }
 
       button1.onAction  = (e: ActionEvent) => {
@@ -159,9 +161,6 @@ object CalculatorGUI extends JFXApp {
         text.text = text.text.value + "7"
       }
 
-      button7.onAction  = (e: ActionEvent) => {
-        text.text = text.text.value + "7"
-      }
 
       button8.onAction  = (e: ActionEvent) => {
         text.text = text.text.value + "8"
