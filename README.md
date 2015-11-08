@@ -130,7 +130,7 @@ However , machines are more suitable  for evaluating postfix notation so workflo
  * transform tokens to postfix notataion (method *infixToPostfix* from Object **ShuntingYard**)
  * Finally evaluate postfx and return value to GUI (method *rpn* from Object **Calculator**)
  
- Probably the most interesting part is **ShuntingYard** algorithm. High overvie of algorithm is:
+Probably the most interesting part is **ShuntingYard** algorithm. High overview of algorithm is:
  
  1. Loop through the tokens
  2. In case of operand, push to the  operand stack
@@ -141,14 +141,14 @@ However , machines are more suitable  for evaluating postfix notation so workflo
  4. When we get to the end of the formula, apply any operators remaining on the stack, from the top down. 
  Then the result is the only item left on the operand stack (assuming well-formed input).
  
- Here are few good resources for understanding this algorithm in details:
+Here are few good resources for understanding this algorithm in details:
  
  * [oxfordmathcenter](http://www.oxfordmathcenter.com/drupal7/node/628)
  * [wikipedia](https://en.wikipedia.org/wiki/Shunting-yard_algorithm)
  
- For evaluating that posfix notation again stack is used and it is pretty straight forward as shown in 
-  method **rpn** in file Calculator.scala  Here , the biggest catch is to make sure that *logarithm* is unary 
-  operand. 
+For evaluating that posfix notation again stack is used and it is pretty straight forward as shown in 
+method **rpn** in file Calculator.scala  Here , the biggest catch is to make sure that *logarithm* is unary 
+operand. 
 
 
 ### Simple linear equation
