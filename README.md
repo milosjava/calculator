@@ -1,6 +1,4 @@
----
-output: pdf_document
----
+
 # TOPTAL Calculator
 
 
