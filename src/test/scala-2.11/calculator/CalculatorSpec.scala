@@ -100,14 +100,35 @@ class CalculatorSpec extends FunSuite{
 
     assert(Calculator.calculate("10 / 3.123 ")=="3.202049311559398")
 
+
+    //various
+
+    assert(Calculator.calculate("85+96*(1-log6)")=="106.29747996317022")
+
+
+    //errors
+
+    assert(Calculator.calculate("//(**//")=="Malformed")
+
+    assert(Calculator.calculate("5log6")=="Malformed")
+
+    assert(Calculator.calculate("()")=="Malformed")
+
+    assert(Calculator.calculate("qwerty")=="")
+
+    assert(Calculator.calculate("1((")=="Malformed")
+
+    assert(Calculator.calculate("96+9/")=="Malformed")
+
+    assert(Calculator.calculate("loglogloglog")=="Malformed")
+
+    assert(Calculator.calculate("3215+++")=="Malformed")
+
     assert(Calculator.calculate("1500 / 0  ") == "error")
 
     assert(Calculator.calculate("543 / (2-2)  ") == "error")
 
 
-    //various
-
-    assert(Calculator.calculate("85+96*(1-log6)")=="106.29747996317022")
 
 
 

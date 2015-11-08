@@ -33,7 +33,11 @@ object Calculator extends LazyLogging  {
     }
 
     //transform to postfix notation
-    var postfix = ShuntingYard.infixToPostfix(tokens)
+    val postfix = ShuntingYard.infixToPostfix(tokens)
+
+    if(postfix==""){
+      return("Malformed")
+    }
 
     //get the result
     val res =  rpn(postfix)

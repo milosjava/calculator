@@ -2,6 +2,8 @@ package calculator
 
 import com.typesafe.scalalogging.LazyLogging
 
+import scala.util.Try
+
 /**
   * Created by Milos Grubjesic (milosjava@gmail.com) on 11/7/15.
   */
@@ -64,8 +66,12 @@ object ShuntingYard extends LazyLogging  {
           s.push(-40)
         }
         else if (c == ')') {
-          while (s.top != -40) sb.append(ops.charAt(s.pop)).append(' ')
-          s.pop
+          val err = Try {
+            while (s.top != -40) sb.append(ops.charAt(s.pop)).append(' ')
+            s.pop
+          }
+
+          if(err.isFailure==true) return ""
         }
         else {
           sb.append(token).append(' ')
@@ -74,7 +80,8 @@ object ShuntingYard extends LazyLogging  {
     }
 
     while (!s.isEmpty) {
-      sb.append(ops.charAt(s.pop)).append(' ')
+      val err = Try {sb.append(ops.charAt(s.pop)).append(' ')}
+      if(err.isFailure==true) return ""
     }
 
     //finally here's result
