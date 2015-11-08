@@ -28,6 +28,10 @@ object TokenParser extends LazyLogging  {
 
     var resp = reg.findAllIn(replacedStr).toArray
 
+    //if nothing was caught , seems its empty or just junk
+    if(resp.length==0){
+      return Array()
+    }
 
     //if starts with -  add 0 so it looks like -5+2   -> 0-5+2
     if(resp(0)=="-"){

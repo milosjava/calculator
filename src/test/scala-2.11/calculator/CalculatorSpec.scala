@@ -55,9 +55,9 @@ class CalculatorSpec extends FunSuite{
 
 
     //big numbers
-    assert(Calculator.calculate("123456789 - 210987654")=="-87530865")
+    assert(Calculator.calculate("123456789 - 210987654")=="-8.7530865E7")
 
-    assert(Calculator.calculate("100000000 + 300000000")=="400000000")
+    assert(Calculator.calculate("100000000 + 300000000")=="4E8")
 
 
     //multiplication ,combined

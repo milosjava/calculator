@@ -21,6 +21,10 @@ object Calculator extends LazyLogging  {
     //transfrom input to array of tokens
     var tokens = TokenParser.getTokens(input)
 
+    if(tokens.length==0){
+      return ""
+    }
+
     //in case its linear equation pass handling to appropriate method
     if(tokens.contains("x") && tokens.contains("=")) {
       return LinearEquation.solver(input)
@@ -42,7 +46,7 @@ object Calculator extends LazyLogging  {
 
     if(numericRes == numericRes.floor){
       logger.debug(input+" -> "+numericRes.toInt.toString)
-      return numericRes.toInt.toString
+      return numericRes.toString.replace(".0","")
     }
 
     logger.debug(input+" -> "+numericRes.toString)
