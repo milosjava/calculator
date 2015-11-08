@@ -9,6 +9,8 @@ import scala.util.Try
   */
 object Calculator extends LazyLogging  {
 
+  //todo test coverage
+
 
   /**
     * Recieves input parameters and gets result from either calculator

@@ -47,6 +47,9 @@ class CalculatorSpec extends FunSuite{
 
     assert(Calculator.calculate("log1.1") =="0.04139268515822508")
 
+    assert(Calculator.calculate("log3.2") =="0.505149978319906")
+
+
 
     //combined
     assert(Calculator.calculate("(2+(4-1))*5")=="25")
