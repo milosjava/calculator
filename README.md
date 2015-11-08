@@ -117,13 +117,13 @@ This functionality supports addition, subtraction, multiplication, division, log
  * ShuntingYard.scala
  
  
- Calculator.scala object has 2 methods : *calculate* and *rpn*.   Method *calculate* is a high level  workflow that goes from
- receiving input string, parsing it to tokens, transforming to postfix and evaluating.  All these sub-functionalities are
-  handled in separate methods.  e.g. method *rpn* evaluates postfix expression.
+Calculator.scala object has 2 methods : *calculate* and *rpn*.   Method *calculate* is a high level  workflow that goes from
+receiving input string, parsing it to tokens, transforming to postfix and evaluating.  All these sub-functionalities are
+handled in separate methods.  e.g. method *rpn* evaluates postfix expression.
   
   
- Normally humans tend to enter math expressions in inflix notation and that is what is expected as input to calculator. 
- However , machines are more suitable  for evaluating postfix notation so workflow of data goes like this:
+Normally humans tend to enter math expressions in inflix notation and that is what is expected as input to calculator. 
+However , machines are more suitable  for evaluating postfix notation so workflow of data goes like this:
  
  * get inflix notation as input
  * create tokens by applying regex (method *getTokens* from Object **TokenParser**)
