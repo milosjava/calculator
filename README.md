@@ -37,11 +37,26 @@ Enter the project  folder and type:
  
 ## Tests
  
- Code is developed by applying [TDD](https://en.wikipedia.org/wiki/Test-driven_development) and tests are located in folder **/src/test/scala-2.11**,  For running all tests enter the project folder and type:
+ Code is developed by applying [TDD](https://en.wikipedia.org/wiki/Test-driven_development) and tests are located in 
+ folder **/src/test/scala-2.11**,  For running all tests enter the project folder and type:
  
  ```
  sbt test
  ```
+ 
+ ### Tests Coverage
+   
+ 
+   
+   Class |Class %|Method  %| Line %
+    ----|-------|---------|-------
+   Calculator|	100% (9/ 9)|	100% (13/ 13)|	96.3% (52/ 54)
+   LinearEquation|	100% (3/ 3)|	100% (6/ 6)	|95% (38/ 40)
+   ShuntingYard|	100% (4/ 4)	|100% (7/ 7)|	100% (34/ 34)
+   TokenParser|	100% (1/ 1)|	100% (2/ 2)|	100% (10/ 10)
+ 
+ 
+ 
  
 ## Library dependencies
 
@@ -225,16 +240,6 @@ Main idea is to transform both sides of the equation to the form:
   ```
   
   
-  # Tests Coverage
-  
-
-  
-  Class |Class %|Method  %| Line %
-   ----|-------|---------|-------
-  Calculator|	100% (9/ 9)|	100% (13/ 13)|	96.3% (52/ 54)
-  LinearEquation|	100% (3/ 3)|	100% (6/ 6)	|95% (38/ 40)
-  ShuntingYard|	100% (4/ 4)	|100% (7/ 7)|	100% (34/ 34)
-  TokenParser|	100% (1/ 1)|	100% (2/ 2)|	100% (10/ 10)
   
   
   
