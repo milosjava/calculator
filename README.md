@@ -154,6 +154,15 @@ operand.
 ### Simple linear equation
 
 
+Calculator also supports solving linear equations.  For  simplicity, only addition and multiplication operations are allowed
+as described in the task text.
+
+This functionality is located in these classes:
+
+* ShuntingYard.scala
+* LinearEquation.scala
+
+
 
 
 
