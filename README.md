@@ -172,6 +172,12 @@ operand.
 Calculator also supports solving linear equations.  For  simplicity, only addition and multiplication operations are 
 allowed as described in the task text.
 
+Here's example of the linear equation:
+
+```
+2 * x + 0.5 = 1    , and response should be x=0.25
+```
+
 This functionality is located in these classes:
 
 * ShuntingYard.scala
