@@ -154,13 +154,81 @@ operand.
 ### Simple linear equation
 
 
-Calculator also supports solving linear equations.  For  simplicity, only addition and multiplication operations are allowed
-as described in the task text.
+Calculator also supports solving linear equations.  For  simplicity, only addition and multiplication operations are 
+allowed as described in the task text.
 
 This functionality is located in these classes:
 
 * ShuntingYard.scala
 * LinearEquation.scala
+
+
+ShuntingYard was again used for creating postfix notation as in standard calculator mode.  Interesting part related to 
+equation solving is actually located in **LinearEquation.scala**
+
+
+Main idea is to transform both sides of the equation to the form:
+ 
+ 
+ ```
+ m1 * x + b1 =  m2 * x +b2
+ ```
+ 
+ From this form it is very easy to isolate variable **x**
+ 
+ ```
+ x=  (b2 - b1) / (m1 - m2)   
+ ```
+ 
+ which is solution to linear equation. 
+ 
+ 
+ So main obstacle is to transform left and right side of equation to the form :  m * x + b
+ In order to accomplish this task similar way of evaluating was used  as in method **rpn** from file Calculator.scala
+ Again data structure Stack has proved useful. However , in this case it is not possible to evaluate pieces of the
+  expression and push to the stack cause value of x variable is not known.
+  
+  Solution to this problem is to represent all non operation tokens as two elements Array which represents m and b. 
+  These arrays will be pushed and popped from the stack
+  e.g.  
+  
+  ```
+  variable        x ->  (1,0)
+  ```
+  
+  ```
+  expression:  2*x+1 -> (2,1)
+  ```
+  
+  ```
+  number:     4.2 ->  (0,4.2)
+  ```
+  
+  Next , we have to define rules for applying binary operands (+,*) in this space on Array(m0,b0) and Array(m1,b1) 
+   
+  For addition (+) rule is:
+  
+  ```
+  Array(m0,b0) + Array(m1,b1)  = Array(m0 + m1,b0 + b1)
+  ```
+  
+  For multiplication (*) rules are:
+  
+  ```
+  if(m0>0) ->   Array(m0,b0) * Array(m1,b1) = Array(m0 * b1,b0 * b1)
+  ```
+  
+  and
+  
+  ```
+    if(m1>0) ->   Array(m0,b0) * Array(m1,b1) = Array(b0 * m1,b0 * b1)
+  ```
+  
+  
+  
+
+
+
 
 
 
