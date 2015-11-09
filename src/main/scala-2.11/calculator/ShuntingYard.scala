@@ -49,7 +49,7 @@ object ShuntingYard extends LazyLogging  {
             //if operations stack not empty process
             while (!s.isEmpty && shouldContinue) {
 
-              //deal with order of operations
+              //deal with precedence of operations
               val prec2: Int = s.top/2
               val prec1: Int = idx/2
 

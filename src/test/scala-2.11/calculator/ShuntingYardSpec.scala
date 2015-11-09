@@ -90,8 +90,14 @@ class ShuntingYardSpec extends FunSuite{
 
     assert("543 2 2 - / "== toPostfix("543 / (2-2)  "))
 
+    assert("5 7 + 2 * "== toPostfix("( 5 + 7 ) * 2"))
+
+    assert("5 7 2 / + "== toPostfix("5 + 7 / 2"))
+
+    assert("4 22 + 3 * "== toPostfix("(4+22)*3"))
+
+    assert("4 22 + 3 * "== toPostfix("(4+22)*3"))
 
   }
-
 
 }

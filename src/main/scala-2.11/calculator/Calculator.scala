@@ -29,7 +29,10 @@ object Calculator extends LazyLogging  {
 
     //in case its linear equation pass handling to appropriate method
     if(tokens.contains("x") && tokens.contains("=")) {
-      return LinearEquation.solver(input)
+
+      var x  =  LinearEquation.solver(input)
+
+      return(if(x=="Bad expression") "Bad expression" else "x="+x)
     }
 
     //transform to postfix notation

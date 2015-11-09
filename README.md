@@ -37,7 +37,7 @@ Enter the project  folder and type:
  
 ## Tests
  
- Tests are located in folder **/src/test/scala-2.11**,  For running all tests enter the project folder and type:
+ Code is developed by applying [TDD](https://en.wikipedia.org/wiki/Test-driven_development) and tests are located in folder **/src/test/scala-2.11**,  For running all tests enter the project folder and type:
  
  ```
  sbt test
@@ -74,7 +74,7 @@ browsing projects documentation
 After running calculator will show up in the center of the screen as shown on the next image:
 
 
-![Image of Calculator](http://git.toptal.com/tomislav.bacinger/project-milos-grubjesic/blob/master/images/calculator.png)
+![Image of Calculator](images/calculator.png)
 
 
 ### Buttons
