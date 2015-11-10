@@ -1,3 +1,6 @@
+---
+output: pdf_document
+---
 
 # TOPTAL Calculator
 
@@ -89,7 +92,7 @@ browsing projects documentation
 After running calculator will show up in the center of the screen as shown on the next image:
 
 
-![Image of Calculator](images/calculator.png)
+![Image of Calculator](/images/calculator.png)
 
 
 ### Buttons

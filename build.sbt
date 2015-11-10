@@ -3,7 +3,7 @@
 name := "CalculatorScala"
 
 // Project version
-version := "0.5"
+version := "0.9"
 
 // Version of Scala used by the project
 scalaVersion := "2.11.7"
