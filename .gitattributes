@@ -1,1 +1,2 @@
 *.scala linguist-language=Scala
+scalaDoc/* linguist-documentation
