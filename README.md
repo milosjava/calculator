@@ -45,16 +45,14 @@ Enter the project  folder and type:
  ```
  
  ### Tests Coverage
-   
  
-   
-   Class |Class %|Method  %| Line %
-    ----|-------|---------|-------
-   Calculator|	100% (9/ 9)|	100% (13/ 13)|	96.3% (52/ 54)
-   LinearEquation|	100% (3/ 3)|	100% (6/ 6)	|95% (38/ 40)
-   ShuntingYard|	100% (4/ 4)	|100% (7/ 7)|	100% (34/ 34)
-   TokenParser|	100% (1/ 1)|	100% (2/ 2)|	100% (10/ 10)
  
+ | Class   |  Class % |Method  % | Line % |
+|---|---|---|---|
+ |Calculator|	100% (9/ 9)|	100% (13/ 13)|	96.3% (52/ 54)|
+ |  LinearEquation|	100% (3/ 3)|	100% (6/ 6)	|95% (38/ 40)|
+ |  ShuntingYard|	100% (4/ 4)	|100% (7/ 7)|	100% (34/ 34)|
+ |  TokenParser|	100% (1/ 1)|	100% (2/ 2)|	100% (10/ 10)|
  
  
  
